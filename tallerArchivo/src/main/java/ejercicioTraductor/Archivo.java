@@ -1,10 +1,14 @@
-package ejercicioTraductor;
+package Prueba;
 
 import java.io.*;
 import java.util.HashMap;
 
 public class Archivo {
-    File diccionario = new File("C:\\Users\\SAR\\Desktop\\sofka\\tallerArchivo\\Diccionario.txt");
+    private File diccionario;
+
+    public Archivo(){
+        diccionario = new File("Diccionario.txt");
+    }
 
     public void escribirDiccionario(HashMap Diccionario) {
         try {

@@ -1,12 +1,13 @@
-package ejercicioTraductor;
+package Prueba;
 
 import java.util.HashMap;
 
-public class Controlador {
-    Archivo diccionario = new Archivo();
-    HashMap listaPalabras = new HashMap();
+public class Traductor {
 
-    public Controlador(){
+    private Archivo diccionario;
+    private HashMap listaPalabras;
+
+    public Traductor(){
         diccionario = new Archivo();
         listaPalabras = new HashMap();
         listaPalabras = diccionario.leerDiccionario();

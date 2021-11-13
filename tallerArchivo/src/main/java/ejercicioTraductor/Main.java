@@ -1,4 +1,4 @@
-package ejercicioTraductor;
+package Prueba;
 
 
 import java.util.Scanner;
@@ -6,14 +6,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Controlador traductor;
+        Traductor traductor;
         Scanner entrada = new Scanner(System.in);
         String entradaEspanol, entradaIngles;
         int opcion;
         boolean salir = false;
 
         while (salir == false){
-            traductor = new Controlador();
+            traductor = new Traductor();
             System.out.print("\nBIENVENIDO A EL TRADUCTOR\nA continuación estan las operaciones que puede realizar\n" +
                     "1. Insertar una nueva palabra\n" +
                     "2. Consultar la traducción de una palabra\n" +
