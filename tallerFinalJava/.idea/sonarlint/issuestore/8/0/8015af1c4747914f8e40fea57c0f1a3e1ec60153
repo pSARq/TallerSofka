@@ -1,0 +1,9 @@
+
+G
+java:S1659	"*Declare "numerosImpar" on a separate line.(š¤œ 8õ‘ÉÒ/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ş†Æ‹ûÿÿÿÿ
+9
+java:S1643"Use a StringBuilder instead.(“»ê†8…ÆÉÒ/
+>
+java:S1643"Use a StringBuilder instead.(Ö¯óÉıÿÿÿÿ8…ÆÉÒ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨Åõ

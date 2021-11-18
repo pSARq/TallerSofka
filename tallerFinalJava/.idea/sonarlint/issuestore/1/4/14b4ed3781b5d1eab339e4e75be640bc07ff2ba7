@@ -1,0 +1,7 @@
+
+C
+java:S1659"(Declare "nuevaFrase" on a separate line.(‘¶ÅÇúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ýµ¨ëþÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÿŠåÜýÿÿÿÿ
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(‰…×ßýÿÿÿÿ8ÉÒ–ÓÒ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ˆÊ²ý

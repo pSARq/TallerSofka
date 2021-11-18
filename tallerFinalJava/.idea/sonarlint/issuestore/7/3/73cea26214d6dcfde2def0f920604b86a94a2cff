@@ -1,0 +1,9 @@
+
+;
+java:S1659	"%Declare "numero2" on a separate line.(§ÌÌñ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¤Ÿõ£üÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(İ×§Šüÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(”Å
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÌÊùë
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(äß±½ùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÈĞÉıÿÿÿÿ

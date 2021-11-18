@@ -1,0 +1,9 @@
+
+a
+java:S1659"FDeclare "contadorE" and all following declarations on a separate line.(Ò«Ê”þÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ª‡õµ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(þáÖŒ
+k
+java:S1192!"UDefine a constant instead of duplicating this literal " veces en el texto 
+" 4 times.(þáÖŒ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(·ãíÏýÿÿÿÿ

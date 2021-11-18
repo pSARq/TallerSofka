@@ -1,0 +1,9 @@
+
+_
+java:S1659"CDeclare "minimo" and all following declarations on a separate line.(Ú©ê8›ŒÕûÒ/
+K
+java:S2140	")Use "java.util.Random.nextInt()" instead.(É‡ÀÊıÿÿÿÿ8›ŒÕûÒ/
+z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(¹ÑÑïÿÿÿÿÿ8›ŒÕûÒ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æ¦ùüÿÿÿÿ
+T
+java:S2589"7Remove this expression which always evaluates to "true"(ÏçŒÜ8ºŒÕûÒ/
