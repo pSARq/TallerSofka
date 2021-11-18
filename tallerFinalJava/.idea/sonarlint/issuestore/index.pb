@@ -37,5 +37,3 @@ N
 ,src/main/java/Ejercicio8/MainEjercicio8.java,7\5\753aac368ff72927b3c55e6426cfaa4b4c36f163
 ^
 .src/main/java/Ejercicio15/MainEjercicio15.java,c\9\c90a19ea272d61cd246a88bc291d1bfe26333c4d
-\
-,src/main/java/numeroMagico/NumeroMagico.java,e\4\e4d490f908aff1b2c8ad52441e442f17955a41b7
