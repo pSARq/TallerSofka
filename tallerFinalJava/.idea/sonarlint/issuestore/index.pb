@@ -25,8 +25,6 @@ W
 'src/main/java/Ejercicio17/Lavadora.java,d\f\df56bc8033f1773caf1133da02bb577ffbbb3168
 V
 &src/main/java/Ejercicio16/Persona.java,8\a\8a19844de1d7dbd5613f741907c57d27986c560a
-^
-.src/main/java/Ejercicio15/MainEjercicio15.java,c\9\c90a19ea272d61cd246a88bc291d1bfe26333c4d
 Y
 )src/main/java/Ejercicio18/Entregable.java,6\e\6e32986ad70bd03672f8953c59ac3ffbe2630cda
 Y
@@ -35,7 +33,5 @@ T
 $src/main/java/Ejercicio18/Serie.java,c\e\cefb8e92f8b3127540a404a2e5e743c7bdcc4588
 ^
 .src/main/java/Ejercicio17/MainEjercicio17.java,6\d\6d79bfccb44549ccde688dc9ba730e994d1ebf6e
-^
-.src/main/java/Ejercicio16/MainEjercicio16.java,0\0\006af67a9990959241a1d7c1ceb593f99e629462
 ^
 .src/main/java/Ejercicio18/MainEjercicio18.java,b\9\b92156472547f75845b06e24f7faa2250bb134dd

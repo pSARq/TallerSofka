@@ -5,7 +5,6 @@ Realizar un algoritmo que permita consulta la fecha y hora actual en el formato 
 package Ejercicio13;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class MainEjercicio13 {
