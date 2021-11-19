@@ -1,11 +1,0 @@
-
-G
-java:S1659
-"*Declare "numerosImpar" on a separate line.(š¤œ 8´Ú°ÉÒ/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ş†Æ‹ûÿÿÿÿ8ãÚ°ÉÒ/
-t	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ãÚ°ÉÒ/
-9
-java:S1643"Use a StringBuilder instead.(“»ê†8ãÚ°ÉÒ/
->
-java:S1643"Use a StringBuilder instead.(Ö¯óÉıÿÿÿÿ8ãÚ°ÉÒ/
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿¼—ùÿÿÿÿ

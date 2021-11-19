@@ -8,14 +8,17 @@ package Ejercicio11;
 import java.util.Scanner;
 
 public class MainEjercicio11 {
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
-        String frase;
 
+    static Scanner entrada = new Scanner(System.in);
+    static int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
+    static String frase;
+
+    public static void pedirFrase(){
         System.out.print("Ingrese una oración: ");
         frase = entrada.nextLine();
+    }
 
+    public static void contarVocales(){
         for (int i = 0; i < frase.length(); i++) {
             if (frase.charAt(i) == 'a' || frase.charAt(i) == 'A'){
                 contadorA++;
@@ -29,11 +32,22 @@ public class MainEjercicio11 {
                 contadorU++;
             }
         }
+    }
 
+    public static void mostrarConteoVocales(){
         System.out.println("La vocal 'a' aparece " +contadorA+ " veces en el texto \n" +
                 "La vocal 'e' aparece " +contadorE+ " veces en el texto \n" +
                 "La vocal 'i' aparece " +contadorI+ " veces en el texto \n" +
                 "La vocal 'o' aparece " +contadorO+ " veces en el texto \n" +
                 "La vocal 'U' aparece " +contadorU+ " veces en el texto");
+    }
+
+    public static void main(String[] args) {
+
+        pedirFrase();
+        contarVocales();
+        mostrarConteoVocales();
+
+
     }
 }
