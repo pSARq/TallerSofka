@@ -1,3 +1,4 @@
+//Crea el tablero del juego
 (function () {
   self.Board = function (width, height) {
     this.width = width;
@@ -20,6 +21,7 @@
   };
 })();
 
+//Crea la bola del juego
 (function () {
   self.Ball = function (x, y, radius, board) {
     this.x = x;
@@ -37,6 +39,7 @@
     this.kind = "circle";
   };
 
+  //Define que hacer cuando las bola choca con los bordes del tablero
   self.Ball.prototype = {
     move: function () {
       this.x += this.speed_x * this.direction;
@@ -81,6 +84,7 @@
   };
 })();
 
+//Crea las barras del juego
 (function () {
   self.Bar = function (x, y, width, height, board) {
     this.x = x;
@@ -93,6 +97,7 @@
     this.speed = 30;
   };
 
+  //Asigna los movimientos que tienen las barras
   self.Bar.prototype = {
     down: function () {
       this.y += this.speed;
@@ -106,6 +111,7 @@
   };
 })();
 
+//Hace visible los objetos
 (function () {
   self.BoardView = function (canvas, board) {
     this.canvas = canvas;
@@ -116,15 +122,18 @@
   };
 
   self.BoardView.prototype = {
+    //Limpia los objetos de la pantalla los objetos
     clean: function () {
       this.ctx.clearRect(0, 0, this.board.width, this.board.height);
     },
+    //Dibuja los objetos
     draw: function () {
       for (var i = this.board.elements.length - 1; i >= 0; i--) {
         var el = this.board.elements[i];
         draw(this.ctx, el);
       }
     },
+    //Verifica que la pelota choque con algo
     check_collisions: function () {
       for (var i = this.board.bars.length - 1; i >= 0; i--) {
         var bar = this.board.bars[i];
@@ -133,6 +142,7 @@
         }
       }
     },
+    //Se encarga de controlar el juego
     play: function () {
       if (this.board.playing) {
         this.clean();
@@ -183,6 +193,7 @@
   }
 })();
 
+//Se crean los objetos de las clases
 var board = new Board(800, 400);
 var bar = new Bar(0, 130, 30, 100, board);
 var bar_2 = new Bar(770, 130, 30, 100, board);
@@ -190,6 +201,7 @@ var canvas = document.getElementById("canvas");
 var board_view = new BoardView(canvas, board);
 var ball = new Ball(400, 180, 10, board);
 
+//Captura las entradas por teclado
 document.addEventListener("keydown", function (ev) {
   if (ev.keyCode == 38) {
     ev.preventDefault();
@@ -207,12 +219,13 @@ document.addEventListener("keydown", function (ev) {
     ev.preventDefault();
     board.playing = !board.playing;
   }
-  console.log(bar.toString());
 });
 
-board_view.draw();
+
+board_view.draw();//Dibuja el tablero por primera vez
 window.requestAnimationFrame(controller);
 
+//Crea la vista del tablero contantemente
 function controller() {
   board_view.play();
   window.requestAnimationFrame(controller);
