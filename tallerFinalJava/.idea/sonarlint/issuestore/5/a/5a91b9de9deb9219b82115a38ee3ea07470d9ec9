@@ -1,0 +1,5 @@
+
+7	java:S131^""Add a default case to this switch.(¡ùÉà
+b
+java:S1192"GDefine a constant instead of duplicating this literal "Blanco" 4 times.(Ì–æ°üÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Š“ñl

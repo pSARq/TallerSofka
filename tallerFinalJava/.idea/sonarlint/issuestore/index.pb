@@ -35,5 +35,15 @@ N
 ,src/main/java/Ejercicio9/MainEjercicio9.java,1\4\14b4ed3781b5d1eab339e4e75be640bc07ff2ba7
 \
 ,src/main/java/Ejercicio8/MainEjercicio8.java,7\5\753aac368ff72927b3c55e6426cfaa4b4c36f163
+\
+,src/main/java/numeroMagico/NumeroMagico.java,e\4\e4d490f908aff1b2c8ad52441e442f17955a41b7
+Y
+)src/main/java/Ejercicio17/Television.java,b\3\b39325fbf0b3ec6566a898977bd06af6ba4118c4
+_
+/src/main/java/Ejercicio17/Electrodomestico.java,5\a\5a91b9de9deb9219b82115a38ee3ea07470d9ec9
+W
+'src/main/java/Ejercicio17/Lavadora.java,d\f\df56bc8033f1773caf1133da02bb577ffbbb3168
+V
+&src/main/java/Ejercicio16/Persona.java,8\a\8a19844de1d7dbd5613f741907c57d27986c560a
 ^
 .src/main/java/Ejercicio15/MainEjercicio15.java,c\9\c90a19ea272d61cd246a88bc291d1bfe26333c4d

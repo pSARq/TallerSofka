@@ -142,15 +142,14 @@ public class MainEjercicio16 {
         pedirPeso();
         pedirAltura();
 
-        Persona persona1 = new Persona(MainEjercicio16.nombre, MainEjercicio16.edad, MainEjercicio16.peso,
-                MainEjercicio16.altura, 0, MainEjercicio16.sexo);
-        Persona persona2 = new Persona(MainEjercicio16.nombre, MainEjercicio16.edad, MainEjercicio16.sexo);
+        Persona persona1 = new Persona(nombre, edad, peso, altura, 0, sexo);
+        Persona persona2 = new Persona(nombre, edad, sexo);
         Persona persona3 = new Persona();
 
-        persona3.setNombre(MainEjercicio16.nombre);
-        persona3.setEdad(MainEjercicio16.edad);
-        persona3.setPeso(MainEjercicio16.peso);
-        persona3.setAltura(MainEjercicio16.altura);
+        persona3.setNombre(nombre);
+        persona3.setEdad(edad);
+        persona3.setPeso(peso);
+        persona3.setAltura(altura);
 
         System.out.println("\nPeso");
         System.out.println(pesoIdeal(persona1.calcularIMC()));

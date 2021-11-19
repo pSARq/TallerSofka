@@ -1,0 +1,10 @@
+
+h	java:S116"NRename this field "DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èüöšıÿÿÿÿ
+W
+java:S11269"AReplace this if-then-else statement by a single return statement.(éº©í
+D
+java:S2140U")Use "java.util.Random.nextInt()" instead.(©ƒŸüÿÿÿÿ
+f	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚İö
+q
+java:S1488Z"[Immediately return this expression instead of assigning it to the temporary variable "dni".(¤­Ô·
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²õØ·
