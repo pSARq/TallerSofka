@@ -9,28 +9,41 @@ import java.util.Scanner;
 
 public class MainEjercicio14 {
 
-    public static void main(String[] args) {
+    static int numero = 0;
+
+    public static boolean validarEntero(String cadena){
+        try {
+            Integer.parseInt(cadena);
+            return true;
+        }catch (NumberFormatException e){
+            System.out.println("\nIngrese un número entero\n");
+            return false;
+        }
+    }
+
+    public static void pedirNumero(){
         Scanner entrada = new Scanner(System.in);
         String entradaDatos;
         boolean esEntero = false;
-        int numero = 0;
 
         do {
             System.out.print("Digite un número entero: ");
             entradaDatos = entrada.next();
+            esEntero = validarEntero(entradaDatos);
 
-            try {
-                numero = Integer.parseInt(entradaDatos);
-                esEntero = true;
-            }catch (NumberFormatException e){
-                System.out.println("\nIngrese un número entero\n");
-            }
         }while (!esEntero);
+        numero = Integer.parseInt(entradaDatos);
+    }
 
-
+    public static void mostrarNumeros(){
         for (int i = numero; i <= 1000; i+= 2) {
             System.out.println(i+ " ");
         }
+    }
+
+    public static void main(String[] args) {
+        pedirNumero();
+        mostrarNumeros();
     }
 
 
