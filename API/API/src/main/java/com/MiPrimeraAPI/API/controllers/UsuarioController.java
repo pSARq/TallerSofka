@@ -32,7 +32,7 @@ public class UsuarioController {
     }
 
     //Un ejemplo de como se deberia usar:  http://localhost:8080/usuario/query?prioridad=5
-    @GetMapping("/query")
+    @GetMapping("/prioridad/query")
     public ArrayList<UsuarioModel> obtenerUsuarioPorPrioridad(@RequestParam("prioridad") Integer prioridad){
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
@@ -47,4 +47,8 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping("/edad/query")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorEdad(@RequestParam("edad")Integer edad){
+        return this.usuarioService.obtenerPorEdad(edad);
+    }
 }
