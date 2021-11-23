@@ -43,4 +43,8 @@ public class UsuarioService {
             return false;
         }
     }
+
+    public ArrayList<UsuarioModel> obtenerPorEdad(Integer edad){
+        return usuarioRepository.findByEdad(edad);
+    }
 }
