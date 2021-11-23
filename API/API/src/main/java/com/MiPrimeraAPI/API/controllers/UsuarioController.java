@@ -12,6 +12,7 @@ import java.util.Optional;
 @RequestMapping("/usuario")
 public class UsuarioController {
 
+    //Se encapsulo el objeto usuarioService convirtiendolo en privado
     @Autowired
     private UsuarioService usuarioService;
 
@@ -47,11 +48,17 @@ public class UsuarioController {
         }
     }
 
+
+    ///////////
+    //MEJORAS PARA EL TALLER
+
+    //Recibe el parametro de edad para llamar de UsuarioService el servicio de buscar por edad
     @GetMapping("/edad/query")
     public ArrayList<UsuarioModel> obtenerUsuarioPorEdad(@RequestParam("edad")Integer edad){
         return this.usuarioService.obtenerPorEdad(edad);
     }
 
+    //Recibe el parametro de nombre para llamar de UsuarioService el servicio de buscar por nombre
     @GetMapping("/nombre/query")
     public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@RequestParam("nombre") String nombre){
         return this.usuarioService.obtenerPorNombre(nombre);

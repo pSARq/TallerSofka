@@ -12,6 +12,7 @@ public class UsuarioModel {
     private Long id;
 
     private String nombre;
+    //Es el nuevo atributo que se creó
     private Integer edad;
     private String email;
     private Integer prioridad;

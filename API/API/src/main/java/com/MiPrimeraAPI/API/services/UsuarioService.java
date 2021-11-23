@@ -44,10 +44,16 @@ public class UsuarioService {
         }
     }
 
+    ///////////
+
+    //MEJORAS PARA EL TALLER
+
+    //Es la implementacion del metodo abtracto de UsuarioController que se encarga de buscar por la edad
     public ArrayList<UsuarioModel> obtenerPorEdad(Integer edad){
         return usuarioRepository.findByEdad(edad);
     }
 
+    //Es la implementacion del metodo abtracto de UsuarioController que se encarga de buscar por el nombre
     public ArrayList<UsuarioModel> obtenerPorNombre(String nombre){
         return usuarioRepository.findByNombre(nombre);
     }
