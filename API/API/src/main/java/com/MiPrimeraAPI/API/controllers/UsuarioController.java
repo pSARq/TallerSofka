@@ -52,5 +52,8 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorEdad(edad);
     }
 
-
+    @GetMapping("/nombre/query")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@RequestParam("nombre") String nombre){
+        return this.usuarioService.obtenerPorNombre(nombre);
+    }
 }
