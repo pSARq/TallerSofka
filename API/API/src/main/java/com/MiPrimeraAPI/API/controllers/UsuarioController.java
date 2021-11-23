@@ -51,4 +51,6 @@ public class UsuarioController {
     public ArrayList<UsuarioModel> obtenerUsuarioPorEdad(@RequestParam("edad")Integer edad){
         return this.usuarioService.obtenerPorEdad(edad);
     }
+
+
 }
