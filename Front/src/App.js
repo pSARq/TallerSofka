@@ -88,6 +88,7 @@ const List = () => {
   const { dispatch, state } = useContext(Store);
 
   
+  
   useEffect(() => {
     fetch(HOST_API)
       .then((response) => response.json())
@@ -112,6 +113,25 @@ const List = () => {
     dispatch({type:"edit-item", item: todo})
   }
 
+  const onChange = (event, todo) => {
+    const request = {
+      name: todo.name,
+      id: todo.id,
+      completed: event.target.checked
+    };
+    fetch(HOST_API, {
+      method: "POST",
+      body: JSON.stringify(request),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then((todo) => {
+        dispatch({ type: "update-item", item: todo });
+      });
+  };
+
   return (
     <div>
       <table>
@@ -128,7 +148,7 @@ const List = () => {
               <tr key={todo.id}>
                 <td>{todo.id}</td>
                 <td>{todo.name}</td>
-                <td>{todo.isComplete === true ? "SI" : "NO"}</td>
+                <td><input type="checkbox" defaultChecked={todo.completed} onChange={(event) => onChange(event, todo)} /></td>
                 <td>
                   <button onClick={() => onDelete(todo.id)}>Eliminar</button>
                 </td>
