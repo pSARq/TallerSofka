@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState
 } from "react";
+import {useForm} from "react-hook-form"
 
 const HOST_API = "http://localhost:8080/api";
 const initialState = {
@@ -14,15 +15,15 @@ const initialState = {
 const Store = createContext(initialState);
 
 const Form = () => {
-  const formRef = useRef(null);
+  const formRef = useRef({});
   const {dispatch} = useContext(Store)
-  const {state, setState} = useState({})
+  const [informacion, setInformacion] = useState({})
 
   const onAdd = (event) => {
     event.preventDefault();
 
     const request = {
-      name: state.name,
+      name: informacion.name,
       id: null,
       isCompleted: false,
     };
@@ -37,7 +38,7 @@ const Form = () => {
       .then((response) => response.json())
       .then((todo) => {
         dispatch({ type: "add-item", item: todo });
-        setState({ name: "", description: "" });
+        setInformacion({ name: "", description: "" });
         formRef.current.reset();  
       });
   };
@@ -47,14 +48,15 @@ const Form = () => {
       <input
         type="text"
         name="name"
-        onChange={(event) => {
-          setState({ ...state, name: event.target.value });
+        onChange={(event) =>{
+          setInformacion({...informacion, name: event.target.value})
         }}
-      ></input>
+      
+      />
       <button onClick={onAdd}>Agregar</button>
     </form>
-  );
-};
+  )
+}
 
 const List = () => {
   const { dispatch, state } = useContext(Store);
