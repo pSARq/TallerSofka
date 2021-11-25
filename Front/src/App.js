@@ -28,7 +28,7 @@ const Form = () => {
       isCompleted: false,
     };
 
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API, {
       method: "POST",
       body: JSON.stringify(request),
       headers: {
@@ -50,13 +50,13 @@ const Form = () => {
       name: state.name,
       id: item.id,
       isCompleted: item.isCompleted,
-    };
+    };    
 
-    fetch(HOST_API + "/update/todo", { mode: "cors" }, {
-      method: "PUT",
+    fetch(HOST_API, {
+      method: "POST",
       body: JSON.stringify(request),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type":"application/json",
       },
     })
       .then((response) => response.json())
@@ -87,8 +87,9 @@ const Form = () => {
 const List = () => {
   const { dispatch, state } = useContext(Store);
 
+  
   useEffect(() => {
-    fetch(HOST_API + "/todos")
+    fetch(HOST_API)
       .then((response) => response.json())
       .then((list) => {
         dispatch({ type: "update-list", list });
@@ -97,7 +98,7 @@ const List = () => {
 
   const onDelete = (id) => {
     fetch(
-      HOST_API + "/delete/todo/" + id,
+      HOST_API + "/todo/delete/" + id,
       { mode: "cors" },
       {
         method: "DELETE",
