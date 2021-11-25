@@ -5,6 +5,8 @@ import co.com.sofka.crud.Services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api")
@@ -29,7 +31,7 @@ public class TodoController {
     }
 
     @GetMapping(value = "/todo/{id}")
-    public Todo get(@PathVariable("id") Long id){
+    public Optional<Todo> get(@PathVariable("id") Long id){
         return service.get(id);
     }
 
