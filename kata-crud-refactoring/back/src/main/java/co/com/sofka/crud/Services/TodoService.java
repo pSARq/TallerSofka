@@ -34,11 +34,14 @@ public class TodoService {
         todo.setCompleted(todoDTO.isCompleted());
         todo.setGroupListId(todoDTO.getGroupListId());
         repository.save(todo);
-        return  null;
+        return null;
     }
 
-    public Optional<Todo> get(Long id){
-         return repository.findById(id);
+    public List<TodoDTO> get(Long id){
+        List<TodoDTO> list = null;
+        Optional<Todo> todo = repository.findById(id);
+        list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
+        return list;
     }
 
     public void delete(Long id) {
