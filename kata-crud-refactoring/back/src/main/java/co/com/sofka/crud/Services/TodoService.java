@@ -32,7 +32,6 @@ public class TodoService {
         todo.setId(todoDTO.getId());
         todo.setName(todoDTO.getName());
         todo.setCompleted(todoDTO.isCompleted());
-        todo.setGroupListId(todoDTO.getGroupListId());
         repository.save(todo);
         return null;
     }

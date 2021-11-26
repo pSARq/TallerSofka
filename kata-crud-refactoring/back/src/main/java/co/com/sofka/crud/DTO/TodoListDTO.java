@@ -1,12 +1,19 @@
 package co.com.sofka.crud.DTO;
 
-import java.io.Serializable;
+import co.com.sofka.crud.Models.Todo;
 
-public class TodoDTO implements Serializable {
+import java.util.HashSet;
+import java.util.Set;
+
+public class TodoListDTO {
 
     private Long id;
     private String name;
-    private boolean completed;
+    private Set<Todo> task;
+
+    public TodoListDTO() {
+        this.task = new HashSet<>();
+    }
 
     public Long getId() {
         return id;
@@ -24,12 +31,11 @@ public class TodoDTO implements Serializable {
         this.name = name;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public Set<Todo> getTask() {
+        return task;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setTask(Set<Todo> task) {
+        this.task = task;
     }
-
 }

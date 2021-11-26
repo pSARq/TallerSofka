@@ -1,17 +1,17 @@
 package co.com.sofka.crud.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-public class Todo {
+public class TodoList {
 
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    private boolean completed;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Todo> task;
 
     public Long getId() {
         return id;
@@ -29,11 +29,11 @@ public class Todo {
         this.name = name;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public Set<Todo> getTask() {
+        return task;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setTask(Set<Todo> task) {
+        this.task = task;
     }
 }
