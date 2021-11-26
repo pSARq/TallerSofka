@@ -7,6 +7,7 @@ public class TodoDTO implements Serializable {
     private Long id;
     private String name;
     private boolean completed;
+    private Long idList;
 
     public Long getId() {
         return id;
@@ -32,4 +33,11 @@ public class TodoDTO implements Serializable {
         this.completed = completed;
     }
 
+    public Long getIdList() {
+        return idList;
+    }
+
+    public void setIdList(Long idList) {
+        this.idList = idList;
+    }
 }

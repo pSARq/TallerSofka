@@ -33,7 +33,7 @@ public class TodoList {
         return task;
     }
 
-    public void setTask(Set<Todo> task) {
+    public void setTask(boolean task) {
         this.task = task;
     }
 }
