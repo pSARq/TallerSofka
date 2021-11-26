@@ -9,7 +9,7 @@ public class TodoListDTO {
 
     private Long id;
     private String name;
-    private Set<Todo> task;
+    private Set<TodoDTO> task;
 
     public TodoListDTO() {
         this.task = new HashSet<>();
@@ -31,11 +31,11 @@ public class TodoListDTO {
         this.name = name;
     }
 
-    public Set<Todo> getTask() {
+    public Set<TodoDTO> getTask() {
         return task;
     }
 
-    public void setTask(Set<Todo> task) {
+    public void setTask(Set<TodoDTO> task) {
         this.task = task;
     }
 }

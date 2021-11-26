@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -45,17 +46,19 @@ public class TodoService {
     }
 
     public TodoDTO newTodoTask(Long id, TodoDTO todoDTO) {
-        Optional<TodoList> list = repositoryTodoList.findById(id);
+        Optional<TodoList> listTask = repositoryTodoList.findById(id);
 
         Todo todo = new Todo();
         todo.setId(todoDTO.getId());
         todo.setName(todo.getName());
         todo.setCompleted(todo.isCompleted());
 
+        listTask.get().setTask((Set<Todo>) todo);
+
         TodoList todoList = new TodoList();
-        todoList.setId(list.get().getId());
-        todoList.setName(list.get().getName());
-        todoList.setTask(list.get().getTask().add(todo));
+        todoList.setId(listTask.get().getId());
+        todoList.setName(listTask.get().getName());
+        todoList.setTask(listTask.get().getTask());
 
         repositoryTodoList.save(todoList);
         repositoryTodo.save(todo);
