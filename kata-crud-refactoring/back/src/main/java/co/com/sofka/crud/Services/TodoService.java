@@ -1,11 +1,15 @@
 package co.com.sofka.crud.Services;
 
+import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.Models.Todo;
 import co.com.sofka.crud.Repositories.TodoRepository;
+import co.com.sofka.crud.Util.ConvertEntityToUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TodoService {
@@ -13,20 +17,21 @@ public class TodoService {
     @Autowired
     private TodoRepository repository;
 
-    public Iterable<Todo> list(){
-        return repository.findAll();
-    }
+    @Autowired
+    private ConvertEntityToUtil convertEntityToUtil;
 
-    public Todo save(Todo todo){
-        return repository.save(todo);
-    }
-
-    public void delete(Long id){
-        repository.deleteById(id);
+    public List<TodoDTO> list(){
+        List<TodoDTO> list = null;
+        List<Todo> todo = (List<Todo>) repository.findAll();
+        list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
+        return list;
     }
 
     public Optional<Todo> get(Long id){
          return repository.findById(id);
     }
 
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }

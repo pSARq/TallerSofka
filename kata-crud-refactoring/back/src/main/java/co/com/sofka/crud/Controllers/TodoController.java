@@ -1,10 +1,12 @@
 package co.com.sofka.crud.Controllers;
 
+import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.Models.Todo;
 import co.com.sofka.crud.Services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,13 +18,8 @@ public class TodoController {
     private TodoService service;
 
     @GetMapping()
-    public Iterable<Todo> list(){
+    public List<TodoDTO> list() {
         return service.list();
-    }
-    
-    @PostMapping()
-    public Todo save(@RequestBody Todo todo){
-        return service.save(todo);
     }
 
     @DeleteMapping(value = "/todo/{id}")
