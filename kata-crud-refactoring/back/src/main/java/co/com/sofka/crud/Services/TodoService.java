@@ -27,6 +27,16 @@ public class TodoService {
         return list;
     }
 
+    public Todo save(TodoDTO todoDTO){
+        Todo todo = new Todo();
+        todo.setId(todoDTO.getId());
+        todo.setName(todoDTO.getName());
+        todo.setCompleted(todoDTO.isCompleted());
+        todo.setGroupListId(todoDTO.getGroupListId());
+        repository.save(todo);
+        return  null;
+    }
+
     public Optional<Todo> get(Long id){
          return repository.findById(id);
     }

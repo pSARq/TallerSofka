@@ -22,6 +22,11 @@ public class TodoController {
         return service.list();
     }
 
+    @PostMapping
+    public Todo save(@RequestBody TodoDTO todoDTO){
+        return service.save(todoDTO);
+    }
+
     @DeleteMapping(value = "/todo/{id}")
     public void delete(@PathVariable("id")Long id){
         service.delete(id);
