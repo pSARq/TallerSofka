@@ -2,6 +2,7 @@ package co.com.sofka.crud.Services;
 
 import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.Models.Todo;
+import co.com.sofka.crud.Repositories.TodoListRepository;
 import co.com.sofka.crud.Repositories.TodoRepository;
 import co.com.sofka.crud.Util.ConvertEntityToUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,15 @@ import java.util.stream.Collectors;
 public class TodoService {
 
     @Autowired
-    private TodoRepository repository;
-
+    private TodoRepository repositoryTodo;
     @Autowired
     private ConvertEntityToUtil convertEntityToUtil;
+    @Autowired
+    private TodoListRepository repositoryTodoList;
 
     public List<TodoDTO> list(){
         List<TodoDTO> list = null;
-        List<Todo> todo = (List<Todo>) repository.findAll();
+        List<Todo> todo = (List<Todo>) repositoryTodo.findAll();
         list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
         return list;
     }
@@ -32,18 +34,22 @@ public class TodoService {
         todo.setId(todoDTO.getId());
         todo.setName(todoDTO.getName());
         todo.setCompleted(todoDTO.isCompleted());
-        repository.save(todo);
+        repositoryTodo.save(todo);
         return null;
     }
 
     public List<TodoDTO> get(Long id){
         List<TodoDTO> list = null;
-        Optional<Todo> todo = repository.findById(id);
+        Optional<Todo> todo = repositoryTodo.findById(id);
         list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
         return list;
     }
 
-    public void delete(Long id) {
-        repository.deleteById(id);
+    public void deleteTodo(Long id) {
+        repositoryTodo.deleteById(id);
+    }
+
+    public void deleteTask(Long id){
+        repositoryTodoList.deleteById(id);
     }
 }
