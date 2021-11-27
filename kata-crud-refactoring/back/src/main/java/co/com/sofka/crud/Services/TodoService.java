@@ -63,7 +63,25 @@ public class TodoService {
     }
 
     //Método para actualizar
-    
+    public TodoDTO updateTodoTask(Long id, TodoDTO todoDTO){
+        Optional<TodoList> listTask = repositoryTodoList.findById(id);
+
+        for (Todo element: listTask.get().getTask()) {
+            if (element.getId() == todoDTO.getId()){
+                element.setName(todoDTO.getName());
+                element.setCompleted(todoDTO.isCompleted());
+                element.setIdList(todoDTO.getIdList());
+            }
+        }
+
+        TodoList todoList = new TodoList();
+        todoList.setId(listTask.get().getId());
+        todoList.setName(listTask.get().getName());
+        todoList.setTask(listTask.get().getTask());
+
+        repositoryTodoList.save(todoList);
+        return todoDTO;
+    }
 
     //Métodos para mostrar
     public List<TodoListDTO> getListTask(){
