@@ -16,9 +16,9 @@ public class TodoController {
     @Autowired
     private TodoService service;
 
-    @GetMapping()
-    public List<TodoDTO> list() {
-        return service.list();
+    @GetMapping("/list")
+    public Iterable<TodoListDTO> getListTask() {
+        return service.getListTask();
     }
 
     @PostMapping("/list")
@@ -31,12 +31,12 @@ public class TodoController {
         return service.newTodoTask(idList, todoDTO);
     }
 
-    @DeleteMapping(value = "/todo/{id}")
+    @DeleteMapping(value = "/task/{id}")
     public void delete(@PathVariable("id")Long id){
         service.deleteTodo(id);
     }
 
-    @GetMapping(value = "/todo/{id}")
+    @GetMapping(value = "/task/{id}")
     public List<TodoDTO> get(@PathVariable("id") Long id){
         return service.get(id);
     }

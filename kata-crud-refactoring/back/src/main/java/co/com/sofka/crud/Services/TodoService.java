@@ -57,11 +57,11 @@ public class TodoService {
     }
 
     //Métodos para mostrar
-    public Set<TodoListDTO> getListTask(){
+    public List<TodoListDTO> getListTask(){
         List<TodoListDTO> list = null;
         List<TodoList> todoList = (List<TodoList>) repositoryTodoList.findAll();
         list = todoList.stream().map(param -> convertEntityToUtil.convertToDTOTodoList(param)).collect(Collectors.toList());
-        return (Set<TodoListDTO>) list;
+        return list;
     }
 
     public List<TodoDTO> list() {
