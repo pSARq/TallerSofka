@@ -2,6 +2,7 @@ package co.com.sofka.crud.Controllers;
 
 import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.DTO.TodoListDTO;
+import co.com.sofka.crud.Models.TodoList;
 import co.com.sofka.crud.Services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

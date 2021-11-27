@@ -10,9 +10,9 @@ import co.com.sofka.crud.Util.ConvertEntityToUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,7 +25,7 @@ public class TodoService {
     @Autowired
     private TodoListRepository repositoryTodoList;
 
-    //Metodos para insertar/actualizar
+    //Metodos para insertar
     public TodoListDTO newTodoList(TodoListDTO todoListDTO) {
         TodoList todoList = new TodoList();
         todoList.setName(todoListDTO.getName());
@@ -38,23 +38,32 @@ public class TodoService {
         Optional<TodoList> listTask = repositoryTodoList.findById(id);
 
         Todo todo = new Todo();
-        todo.setId(todoDTO.getId());
-        todo.setName(todo.getName());
-        todo.setCompleted(todo.isCompleted());
+        todo.setName(todoDTO.getName());
+        todo.setCompleted(todoDTO.isCompleted());
+        todo.setIdList(id);
 
-        listTask.get().setTask((Set<Todo>) todo);
+        listTask.get().getTask().add(todo);
 
         TodoList todoList = new TodoList();
         todoList.setId(listTask.get().getId());
         todoList.setName(listTask.get().getName());
         todoList.setTask(listTask.get().getTask());
 
-        repositoryTodoList.save(todoList);
-        repositoryTodo.save(todo);
+        TodoList listUpdated = repositoryTodoList.save(todoList);
 
+        Optional<Todo> lastTask = listUpdated.getTask()
+                .stream()
+                .max(Comparator.comparingInt(item -> item.getId().intValue()));
+
+        todoDTO.setId(lastTask.get().getId());
         todoDTO.setIdList(id);
+
+
         return todoDTO;
     }
+
+    //Método para actualizar
+    
 
     //Métodos para mostrar
     public List<TodoListDTO> getListTask(){
@@ -70,7 +79,6 @@ public class TodoService {
         list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
         return list;
     }
-
 
     //Metodos de borrar
     public void deleteList(Long id) {

@@ -1,7 +1,5 @@
 package co.com.sofka.crud.Models;
 
-import co.com.sofka.crud.DTO.TodoDTO;
-
 import javax.persistence.*;
 import java.util.Set;
 
