@@ -21,9 +21,14 @@ public class TodoController {
         return service.list();
     }
 
-    @PostMapping()
+    @PostMapping("/list")
     public TodoListDTO newTodoList(@RequestBody TodoListDTO todoListDTO){
         return service.newTodoList(todoListDTO);
+    }
+
+    @PostMapping("/task/{idList}")
+    public TodoDTO newTodoTask(@PathVariable("idList") Long idList, @RequestBody TodoDTO todoDTO){
+        return service.newTodoTask(idList, todoDTO);
     }
 
     @DeleteMapping(value = "/todo/{id}")

@@ -26,16 +26,7 @@ public class TodoService {
     private TodoListRepository repositoryTodoList;
 
     //Metodos para insertar/actualizar
-    /*
-    public Todo save(TodoDTO todoDTO){
-        Todo todo = new Todo();
-        todo.setId(todoDTO.getId());
-        todo.setName(todoDTO.getName());
-        todo.setCompleted(todoDTO.isCompleted());
-        repositoryTodo.save(todo);
-        return null;
-    }
-    */
+
 
     public TodoListDTO newTodoList(TodoListDTO todoListDTO) {
         TodoList todoList = new TodoList();
