@@ -7,6 +7,16 @@ public class TodoDTO {
     private boolean completed;
     private Long idList;
 
+    public TodoDTO() {
+    }
+
+    public TodoDTO(Long id, String name, boolean completed, Long idList) {
+        this.id = id;
+        this.name = name;
+        this.completed = completed;
+        this.idList = idList;
+    }
+
     public Long getId() {
         return id;
     }

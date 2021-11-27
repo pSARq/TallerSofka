@@ -6,7 +6,7 @@ import co.com.sofka.crud.Services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -21,8 +21,8 @@ public class TodoController {
         return service.getListTask();
     }
 
-    @GetMapping(value = "/tasks/{idList}")
-    public List<TodoDTO> getTask(@PathVariable("idList") Long idList){
+    @GetMapping("/tasks/{idList}")
+    public Set<TodoDTO> getTask(@PathVariable("idList") Long idList){
         return service.getTask(idList);
     }
 

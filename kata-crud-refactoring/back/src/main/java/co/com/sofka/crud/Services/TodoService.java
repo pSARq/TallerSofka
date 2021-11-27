@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -92,11 +93,10 @@ public class TodoService {
         return list;
     }
 
-    public List<TodoDTO> getTask(Long id) {
-        List<TodoDTO> list = null;
-        Optional<Todo> todo = repositoryTodo.findById(id);
-        list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
-        return list;
+    public Set<TodoDTO> getTask(Long idList) {
+        return repositoryTodoList.findById(idList).get().getTask().stream()
+                .map(param -> new TodoDTO(param.getId(), param.getName(), param.isCompleted(), idList))
+                .collect(Collectors.toSet());
     }
 
     //Metodos de borrar
