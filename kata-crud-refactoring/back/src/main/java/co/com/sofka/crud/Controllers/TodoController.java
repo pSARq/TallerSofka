@@ -21,6 +21,11 @@ public class TodoController {
         return service.getListTask();
     }
 
+    @GetMapping(value = "/task/{id}")
+    public List<TodoDTO> getTask(@PathVariable("id") Long id){
+        return service.getTask(id);
+    }
+
     @PostMapping("/list")
     public TodoListDTO newTodoList(@RequestBody TodoListDTO todoListDTO){
         return service.newTodoList(todoListDTO);
@@ -36,9 +41,6 @@ public class TodoController {
         service.deleteTodo(id);
     }
 
-    @GetMapping(value = "/task/{id}")
-    public List<TodoDTO> get(@PathVariable("id") Long id){
-        return service.get(id);
-    }
+
 
 }

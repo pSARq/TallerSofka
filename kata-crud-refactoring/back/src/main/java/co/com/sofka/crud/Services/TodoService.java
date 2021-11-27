@@ -64,14 +64,7 @@ public class TodoService {
         return list;
     }
 
-    public List<TodoDTO> list() {
-        List<TodoDTO> list = null;
-        List<Todo> todo = (List<Todo>) repositoryTodo.findAll();
-        list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
-        return list;
-    }
-
-    public List<TodoDTO> get(Long id) {
+    public List<TodoDTO> getTask(Long id) {
         List<TodoDTO> list = null;
         Optional<Todo> todo = repositoryTodo.findById(id);
         list = todo.stream().map(param -> convertEntityToUtil.convertToDTOTodo(param)).collect(Collectors.toList());
