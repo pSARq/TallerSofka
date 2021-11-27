@@ -68,6 +68,7 @@ public class TodoService {
 
         for (Todo element: listTask.get().getTask()) {
             if (element.getId() == todoDTO.getId()){
+                element.setId(todoDTO.getId());
                 element.setName(todoDTO.getName());
                 element.setCompleted(todoDTO.isCompleted());
                 element.setIdList(todoDTO.getIdList());

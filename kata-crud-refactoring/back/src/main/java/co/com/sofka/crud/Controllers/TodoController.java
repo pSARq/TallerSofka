@@ -2,9 +2,12 @@ package co.com.sofka.crud.Controllers;
 
 import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.DTO.TodoListDTO;
+import co.com.sofka.crud.Models.Todo;
 import co.com.sofka.crud.Models.TodoList;
 import co.com.sofka.crud.Services.TodoService;
+import org.modelmapper.internal.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,12 +40,17 @@ public class TodoController {
         return service.newTodoTask(idList, todoDTO);
     }
 
-    @DeleteMapping(value = "/delList/{id}")
+    @PutMapping("/updateTask/{idList}")
+    public TodoDTO updateTodoTask(@PathVariable("idList") Long idList, @RequestBody TodoDTO todoDTO){
+        return service.updateTodoTask(idList, todoDTO);
+    }
+
+    @DeleteMapping("/delList/{id}")
     public void deleteList(@PathVariable("id")Long id){
         service.deleteList(id);
     }
 
-    @DeleteMapping(value = "/delTask/{id}")
+    @DeleteMapping("/delTask/{id}")
     public void deleteTask(@PathVariable("id")Long id){
         service.deleteTask(id);
     }
