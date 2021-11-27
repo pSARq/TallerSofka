@@ -34,13 +34,13 @@ public class TodoService {
         return todoListDTO;
     }
 
-    public TodoDTO newTodoTask(Long id, TodoDTO todoDTO) {
-        Optional<TodoList> listTask = repositoryTodoList.findById(id);
+    public TodoDTO newTodoTask(Long idList, TodoDTO todoDTO) {
+        Optional<TodoList> listTask = repositoryTodoList.findById(idList);
 
         Todo todo = new Todo();
         todo.setName(todoDTO.getName());
         todo.setCompleted(todoDTO.isCompleted());
-        todo.setIdList(id);
+        todo.setIdList(idList);
 
         listTask.get().getTask().add(todo);
 
@@ -56,15 +56,15 @@ public class TodoService {
                 .max(Comparator.comparingInt(item -> item.getId().intValue()));
 
         todoDTO.setId(lastTask.get().getId());
-        todoDTO.setIdList(id);
+        todoDTO.setIdList(idList);
 
 
         return todoDTO;
     }
 
     //Método para actualizar
-    public TodoDTO updateTodoTask(Long id, TodoDTO todoDTO){
-        Optional<TodoList> listTask = repositoryTodoList.findById(id);
+    public TodoDTO updateTodoTask(Long idList, TodoDTO todoDTO){
+        Optional<TodoList> listTask = repositoryTodoList.findById(idList);
 
         for (Todo element: listTask.get().getTask()) {
             if (element.getId() == todoDTO.getId()){

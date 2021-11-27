@@ -77,7 +77,6 @@ const Form = () => {
   </form>
 }
 
-
 const List = () => {
   const { dispatch, state: { todo } } = useContext(Store);
   const currentList = todo.list;
@@ -148,8 +147,6 @@ const List = () => {
     </table>
   </div>
 }
-
-
 
 function reducer(state, action) {
   switch (action.type) {

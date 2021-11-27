@@ -2,12 +2,8 @@ package co.com.sofka.crud.Controllers;
 
 import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.DTO.TodoListDTO;
-import co.com.sofka.crud.Models.Todo;
-import co.com.sofka.crud.Models.TodoList;
 import co.com.sofka.crud.Services.TodoService;
-import org.modelmapper.internal.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,9 +21,9 @@ public class TodoController {
         return service.getListTask();
     }
 
-    @GetMapping(value = "/tasks/{id}")
-    public List<TodoDTO> getTask(@PathVariable("id") Long id){
-        return service.getTask(id);
+    @GetMapping(value = "/tasks/{idList}")
+    public List<TodoDTO> getTask(@PathVariable("idList") Long idList){
+        return service.getTask(idList);
     }
 
     @PostMapping("/list")
