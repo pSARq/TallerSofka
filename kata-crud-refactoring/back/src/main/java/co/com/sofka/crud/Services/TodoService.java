@@ -26,8 +26,6 @@ public class TodoService {
     private TodoListRepository repositoryTodoList;
 
     //Metodos para insertar/actualizar
-
-
     public TodoListDTO newTodoList(TodoListDTO todoListDTO) {
         TodoList todoList = new TodoList();
         todoList.setName(todoListDTO.getName());
@@ -56,6 +54,14 @@ public class TodoService {
 
         todoDTO.setIdList(id);
         return todoDTO;
+    }
+
+    //Métodos para mostrar
+    public Set<TodoListDTO> getListTask(){
+        List<TodoListDTO> list = null;
+        List<TodoList> todoList = (List<TodoList>) repositoryTodoList.findAll();
+        list = todoList.stream().map(param -> convertEntityToUtil.convertToDTOTodoList(param)).collect(Collectors.toList());
+        return (Set<TodoListDTO>) list;
     }
 
     public List<TodoDTO> list() {
