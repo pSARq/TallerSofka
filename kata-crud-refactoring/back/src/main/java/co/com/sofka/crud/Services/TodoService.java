@@ -74,10 +74,10 @@ public class TodoService {
 
     //Metodos de borrar
     public void deleteList(Long id) {
-        repositoryTodo.deleteById(id);
+        repositoryTodoList.deleteById(id);
     }
 
     public void deleteTask(Long id) {
-        repositoryTodoList.deleteById(id);
+        repositoryTodo.deleteById(id);
     }
 }
