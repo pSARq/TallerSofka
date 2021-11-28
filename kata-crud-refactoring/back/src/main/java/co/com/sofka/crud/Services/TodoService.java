@@ -7,13 +7,13 @@ import co.com.sofka.crud.Models.TodoList;
 import co.com.sofka.crud.Repositories.TodoListRepository;
 import co.com.sofka.crud.Repositories.TodoRepository;
 import co.com.sofka.crud.Util.ConvertEntityToUtil;
+import jdk.javadoc.doclet.Reporter;
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import javax.swing.text.html.Option;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service

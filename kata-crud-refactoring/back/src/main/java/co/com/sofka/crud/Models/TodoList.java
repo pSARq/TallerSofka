@@ -7,7 +7,7 @@ import java.util.Set;
 public class TodoList {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
