@@ -1,12 +1,10 @@
 import React, { useContext, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
 import ApiTask from "./ApiTask";
 import events from "../eventsAction";
 import Store from "../store";
 
 const FormView = ({listId, todo}) => {
   const formRef = useRef(null);
-  const { register } = useForm();
   const { dispatch } = useContext(Store);
   const item = todo.item[listId] ? todo.item[listId] : {};
   const [state, setState] = useState(item);
@@ -66,12 +64,7 @@ const FormView = ({listId, todo}) => {
     <form ref={formRef}>
       <input
         type="text"
-        { ...register("name",{
-          required:{
-            value: true,
-            message: "Nombre requerido"
-          },
-        })}
+        name="name"
         defaultValue={item.name}
         placeholder="¿Qué piensas hacer?"
         onChange={(event) => {
