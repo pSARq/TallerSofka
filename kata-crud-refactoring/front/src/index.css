@@ -1,5 +1,6 @@
+/* Es el cuerpo principal de la pagina */
 body {
-  margin: 0;
+  margin: 40px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,23 +8,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Se encarga del contenido dentro del dashboard */
 .content {
   margin: 12px;
-}
-
-.title {
-  text-align: center;
-  border: 2px solid #cccccc;
 }
 
 .container {
   border: 2px solid #cccccc;
 }
 
+/* Modifica el titulo */
+.title {
+  text-align: center;
+  border: 2px solid #cccccc;
+}
+
+/* Se encarga del texto de error */
 .text-danger{
   color: red;
 }
 
+/* Son los botones */
 button{
   border-radius: 4px;
   padding: 2px 10px;

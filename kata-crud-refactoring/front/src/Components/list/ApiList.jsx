@@ -1,3 +1,4 @@
+//Son los métodos fetch de las listas de tareas
 const HOST_API = "http://localhost:8080/api/"
 export default {
     findAll: async () => {

@@ -1,9 +1,8 @@
 package co.com.sofka.crud.Models;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 
+//Es la entidad de tarea
 @Entity
 public class Todo {
 

@@ -3,6 +3,7 @@ package co.com.sofka.crud.Models;
 import javax.persistence.*;
 import java.util.Set;
 
+//Es la entidad de las listas de tareas
 @Entity
 public class TodoList {
 
@@ -10,6 +11,7 @@ public class TodoList {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    //Se crea relación de una lista a muchas tareas y permite eliminar en cascada
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Todo> task;
 

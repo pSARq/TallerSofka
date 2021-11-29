@@ -1,5 +1,6 @@
 package co.com.sofka.crud.DTO;
 
+//Se crea modelo plano de tarea
 public class TodoDTO {
 
     private Long id;

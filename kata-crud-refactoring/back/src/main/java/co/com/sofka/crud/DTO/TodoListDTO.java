@@ -1,10 +1,9 @@
 package co.com.sofka.crud.DTO;
 
-import co.com.sofka.crud.Models.Todo;
-
 import java.util.HashSet;
 import java.util.Set;
 
+//Se crea modelo plano de lista de tareas
 public class TodoListDTO {
 
     private Long id;

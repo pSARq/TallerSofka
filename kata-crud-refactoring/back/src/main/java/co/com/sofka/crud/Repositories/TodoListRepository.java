@@ -4,6 +4,7 @@ import co.com.sofka.crud.Models.TodoList;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+//Repositorio de lista de tareas
 @Repository
 public interface TodoListRepository extends CrudRepository<TodoList, Long> {
 }

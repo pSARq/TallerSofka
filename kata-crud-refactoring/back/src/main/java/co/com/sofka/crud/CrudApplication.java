@@ -12,6 +12,7 @@ public class CrudApplication {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 
+	//Es para evitar un error con el componente de la carpeta Util
 	@Bean
 	public ModelMapper ModelMapper(){
 		return new ModelMapper();

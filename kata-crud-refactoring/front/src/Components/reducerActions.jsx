@@ -1,5 +1,6 @@
 import { TYPE } from "./eventsAction";
 
+//Retorna las diferentes acciones que puede ejecutar el reducer
 export default () => {
   const action = {};
 

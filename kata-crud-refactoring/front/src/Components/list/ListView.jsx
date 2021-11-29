@@ -8,6 +8,7 @@ import Store from "../store"
 function ListView(){
     const { state: { list, todo }, dispatch } = useContext(Store);
     const [isLoaded, setLoaded] = useState(false);
+    //Muestra las listas de tareas
     useEffect(() => {
         ApiList.findAll().then((response) => {
             if(response.ok) {
@@ -19,6 +20,7 @@ function ListView(){
         })
     }, [dispatch]);
 
+    //Elimina una lista de tareas
     const onDelete = (listId) => {
         ApiList.delete(listId).then((response) => {
             if(response.ok) {
@@ -27,6 +29,7 @@ function ListView(){
         })
     };
 
+    //Muestra las listas de tareas
     return <div>
         {!isLoaded && <div>Loading</div>}
         {list.elements.length === 0 && <div>empty list!</div>}

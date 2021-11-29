@@ -1,8 +1,6 @@
 package co.com.sofka.crud.Util;
 
-import co.com.sofka.crud.DTO.TodoDTO;
 import co.com.sofka.crud.DTO.TodoListDTO;
-import co.com.sofka.crud.Models.Todo;
 import co.com.sofka.crud.Models.TodoList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,15 +12,7 @@ public class ConvertEntityToUtil {
     @Autowired
     private ModelMapper modelMapper;
 
-    public TodoDTO convertToDTOTodo(Todo todo){
-        TodoDTO todoDTO = null;
-
-        if (todo != null ){
-            todoDTO = modelMapper.map(todo, TodoDTO.class);
-        }
-        return todoDTO;
-    }
-
+    //Permite convertir de lista de tareas a un objeto del modelo plano de lista de tareas
     public TodoListDTO convertToDTOTodoList(TodoList todoList){
         TodoListDTO todoListDTO = null;
 

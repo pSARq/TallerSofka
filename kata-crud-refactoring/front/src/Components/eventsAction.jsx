@@ -1,3 +1,4 @@
+//Son los tipos de acciones
 export const TYPE = {
   TASK_CREATE: "item.TASK_CREATE",
   TASK_UPDATE: "item.TASK_UPDATE",
@@ -9,6 +10,7 @@ export const TYPE = {
   LIST_DELETE: "list.LIST_DELETE",
 };
 
+//Son las acciones que puede ejecutar el reducer
 export default {
   saveTask: (idList, item) => ({
     type: TYPE.TASK_CREATE,
