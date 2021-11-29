@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Fragment } from "react";
+import logo from "../../Img/book.png";
 
 const Navbar = () => {
   return (
@@ -8,8 +7,8 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-          <img src="https://cdn-icons.flaticon.com/png/512/3145/premium/3145765.png?token=exp=1638208277~hmac=3d3805faaa3ea31905e97b1b9e4f7a77" 
-            width="50" height="50" />
+            <img src={logo} alt="" width="50" height="50" />
+            Biblioteca
           </a>
           <button
             className="navbar-toggler"
@@ -30,7 +29,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/Register">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/Register"
+                >
                   Ingresar
                 </a>
               </li>
@@ -39,7 +42,7 @@ const Navbar = () => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Ingrese el libro"   
+                placeholder="Ingrese el libro"
               />
               <button className="btn btn-outline-success" type="submit">
                 Buscar
