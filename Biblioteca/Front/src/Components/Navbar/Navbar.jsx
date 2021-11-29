@@ -2,13 +2,16 @@ import React, { Fragment } from "react";
 import logo from "../../Img/book.png";
 
 const Navbar = () => {
+
+
+
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="" width="50" height="50" />
-            Biblioteca
+                Biblioteca
           </a>
           <button
             className="navbar-toggler"
@@ -35,6 +38,15 @@ const Navbar = () => {
                   href="/Register"
                 >
                   Ingresar
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/Register"
+                >
+                  Salir
                 </a>
               </li>
             </ul>
