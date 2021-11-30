@@ -3,13 +3,11 @@ import logo from "../../Img/book.png";
 
 const Navbar = () => {
 
-
-
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="/home">
             <img src={logo} alt="" width="50" height="50" />
                 Biblioteca
           </a>
@@ -27,7 +25,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active" aria-current="page" href="/home">
                   Inicio
                 </a>
               </li>
@@ -35,16 +33,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="/login"
-                >
-                  Ingresar
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="/Register"
+                  href="/"
                 >
                   Salir
                 </a>
