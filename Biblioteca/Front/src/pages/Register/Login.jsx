@@ -42,6 +42,7 @@ const Login = () => {
           })}/>
         <div className="text-danger">{errors?.password?.message}</div>
       </div>
+      <a href="/register">¿Aun no estas registrado?</a>
       <div className="container text-center">
         <button type="submit" className="btn btn-primary">
           Iniciar sesión
