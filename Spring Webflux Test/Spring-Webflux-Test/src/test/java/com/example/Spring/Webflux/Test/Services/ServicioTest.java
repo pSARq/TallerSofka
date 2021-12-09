@@ -66,4 +66,19 @@ public class ServicioTest {
                         throwable.getMessage().equals("Mensaje de Error"))
                 .verify();
     }
+
+    @Test
+    void testBasadoEnTiempo(){
+        Flux<String> source = servicio.buscarTodosLento();
+
+        StepVerifier.withVirtualTime(() -> Flux.interval(Duration.ofSeconds(1)).take(2))
+                .expectSubscription()
+                .expectNoEvent(Duration.ofSeconds(1))
+                .expectNext(0L)
+                .thenAwait(Duration.ofSeconds(1))
+                .expectNext(1L)
+                .verifyComplete();
+    }
+
+  
 }
