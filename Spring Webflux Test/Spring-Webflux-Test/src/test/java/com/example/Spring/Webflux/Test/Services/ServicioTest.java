@@ -45,10 +45,9 @@ public class ServicioTest {
     void testTodosFiltro(){
         Flux<String> source = servicio.buscarTodosFiltro();
         StepVerifier.create(source)
-                .expectNext("JHON")
-                .expectNextMatches(name -> name.startsWith("MA"))
-                .expectNext("CLOE", "CATE")
-                .expectComplete()
+                .expectNextCount(4)
+                .expectErrorMatches(throwable -> throwable instanceof IllegalArgumentException &&
+                        throwable.getMessage().equals("Mensaje de Error"))
                 .verify();
     }
 }
