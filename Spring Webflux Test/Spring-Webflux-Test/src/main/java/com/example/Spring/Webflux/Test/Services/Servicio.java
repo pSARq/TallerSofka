@@ -25,11 +25,7 @@ public class Servicio {
                 .filter(name -> name.length() == 4)
                 .map(String::toUpperCase);
 
-        Flux<String> error = source.concatWith(
-                Mono.error(new IllegalArgumentException("Mensaje de Error"))
-        );
-
-        return error;
+        return source;
     }
 
 }
