@@ -16,4 +16,10 @@ public class testUpperCaseConverter {
                 .expectNext("DATOS", "GENERADOS", "SOFKA")
                 .verifyComplete();
     }
+
+    @Test
+    void testNull(){
+        TestPublisher.createNoncompliant(TestPublisher.Violation.ALLOW_NULL)
+                .emit("1", "2", null, "3");
+    }
 }
