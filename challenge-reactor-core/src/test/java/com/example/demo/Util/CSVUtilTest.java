@@ -2,6 +2,7 @@ package com.example.demo.Util;
 
 import com.example.demo.Model.Player;
 import org.junit.jupiter.api.Test;
+import org.springframework.data.mongodb.core.aggregation.DateOperators;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -52,6 +53,11 @@ public class CSVUtilTest {
             System.out.println("\n"+national);
             players.stream().forEach(player -> System.out.println(player.name +" - Partidos ganados: "+player.winners));
         });
+    }
+
+    @Test
+    void prueba(){
+        Mono<String> a = Mono.just("a").delaySubscription(s -> DateOperators.Millisecond);
     }
 
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class PlayerService {
@@ -18,13 +19,8 @@ public class PlayerService {
         return playerRepository.findAll()
                 .buffer(100)
                 .flatMap(player -> Flux.fromStream(player.parallelStream()).cache())
-                .filter(player -> {
-                    try {
-                        return player.getAge() >= 34 && player.club.equals("Fluminense");
-                    }catch (Exception e){
-                        return false;
-                    }
-                })
+                .filter(player -> Objects.nonNull(player.getClub()))
+                .filter(player -> player.getAge() >= 34 && player.club.equals("Fluminense"))
                 .distinct()
                 .groupBy(PlayerCollection::getClub)
                 .flatMap(Flux::collectList);
@@ -39,5 +35,5 @@ public class PlayerService {
                 .groupBy(PlayerCollection::getNational)
                 .flatMap(Flux::collectList);
     }
-    
+
 }
